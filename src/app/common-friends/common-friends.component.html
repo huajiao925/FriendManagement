@@ -1,19 +1,30 @@
-<input type="email" placeholder="My email">
-<input type="email" placeholder="Friend's email">
-<button>Common Friends</button>
- 
+<div>
+  <input type="email" placeholder="My email" #email1>
+  <input type="email" placeholder="Friend's email" #email2>
+  <button (click)="showCommonFriends(email1.value, email2.value)">Common Friends</button>
+</div>
 
-<table>
-<thead>
-<tr>
-    <th><input type="radio"></th>
-    <th>In Common</th>
-</tr>
-</thead>
-<tbody>
-    <tr>
-        <td></td>
-        <td>email</td>
-    </tr>
-</tbody>
-</table>
+<div class="container" *ngIf="myFriends">
+    <div class="row">
+      <div class="col-12" >
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Our Common Friends</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let f of myFriends"> 
+              <td>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" >
+                </div>
+              </td>
+              <td>{{f}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -1,19 +1,29 @@
-<input type="email" placeholder="My email">
-<button>Friends</button>
-<button>Subscribe</button>
-<button>Block</button>
+<input type="email" placeholder="My email" #account>
+<button (click)="showMyFriends(account.value)">My Friends</button>
+<button (click)="subscribeFriends(account.value)"> Subscribe</button>
+<button (click)="blockFriends(account.value)">Block</button>
 
-<table>
-<thead>
-<tr>
-    <th><input type="radio"></th>
-    <th>My Friend</th>
-</tr>
-</thead>
-<tbody>
-    <tr>
-        <td></td>
-        <td>email</td>
-    </tr>
-</tbody>
-</table>
+<div class="container" *ngIf="myFriends">
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered"> 
+          <thead >
+            <tr>
+              <th scope="col"></th>
+              <th scope="col"> My Friends</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let f of myFriends"> 
+              <td>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" value="abc" (change)="selected(f, $event)">
+                </div>
+              </td>
+              <td>{{f}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

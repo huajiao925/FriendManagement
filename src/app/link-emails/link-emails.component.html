@@ -1,5 +1,6 @@
-<form>
-    <input type="email" placeholder="My Email">
-    <input type="email" placeholder="Friend's Email">
-    <button type="submit">Link Up</button>
-</form>
+<div>
+    <input type="email" placeholder="My Email" #email1>
+    <input type="email" placeholder="Friend's Email" #email2>
+    <button (click)="linkFriends(email1.value, email2.value)">LINK UP</button>
+</div>
+

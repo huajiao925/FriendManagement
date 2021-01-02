@@ -1,7 +1,7 @@
 export interface FriendList{
-    ID: number;
+    ID: string;
     account: string;
     friendList: string[];
-    subscriptionList: string[];
+    subList: string[];
     blockList: string[];
 }

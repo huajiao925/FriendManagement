@@ -1,4 +1,9 @@
-<input type=email placeholder="My email">
-<input type=email placeholder="Friend's email">
-<button>Post Update</button>
-<textarea></textarea>
+<form #post="ngForm" (ngSubmit)="makeAPost(post)">
+    <input type=email placeholder="My email" name="sendFrom" ngModel>
+    <input type=email placeholder="Friend's email" name="receivedBy" ngModel>
+    <textarea name="content" ngModel></textarea>
+    <button type="submit">Post Update</button>
+</form>
+
+
+

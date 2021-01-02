@@ -1,6 +1,6 @@
 export interface FriendPost{
-    ID: number;
+    ID: string;
     sendFrom: string;
-    receiveBy: string;
-    post: string[];
+    receivedBy: string;
+    post: string;
 }
