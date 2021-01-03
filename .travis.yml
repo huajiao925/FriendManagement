@@ -2,7 +2,15 @@ language: node_js
 node_js:
   - 14  
 deploy:
+  provider: releases
+  api_key: "d73851db70a0e7f175332661a7064c4d617afc1d"
+  password: "4rfvgy7UJM"
+  file_glob: true
+  file: src/*
   skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
 
 script: 'true'
 
@@ -24,4 +32,3 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-    update: true
