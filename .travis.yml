@@ -3,3 +3,5 @@ node_js:
   - 14  
 deploy:
   skip_cleanup: true
+
+script: 'true'
