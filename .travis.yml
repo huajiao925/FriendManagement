@@ -7,6 +7,6 @@ deploy:
 script: 'true'
 
 before_install:
-  - npm i -g npm@version-number
+  - npm i -g npm@6.14.9
 cache:
   npm: false
